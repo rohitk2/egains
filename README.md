@@ -15,19 +15,15 @@ An AI-powered chatbot that collects user preferences through conversation and re
 
 ```mermaid
 graph TD
-    A[Browser - index.html] -->|GET /start| B[FastAPI Server - server.py]
-    A -->|POST /chat| B
-    B -->|invoke graph| C[LangGraph - chatbot.py]
-    C -->|orchestrator_agent| D[Claude API]
-    D -->|assistant response| C
-    C -->|preferences complete?| E{Route}
-    E -->|No| F[Return response to user]
-    E -->|Yes| G[product_query_execute]
-    G -->|filter & sort| H[Product Database - products.csv]
-    H -->|top 3 results| G
-    G --> F
-    F --> B
-    B -->|JSON response| A
+    A((START)) --> B[orchestrator_agent]
+    B -->|send conversation| C[Claude API]
+    C -->|assistant response| B
+    B --> D{should_query_products}
+    D -->|preferences incomplete| E((END))
+    D -->|preferences complete| F[product_query_execute]
+    F -->|filter & sort by prefs| G[(products.csv)]
+    G -->|top 3 results| F
+    F --> E
 ```
 
 ## Chatbot Flow
