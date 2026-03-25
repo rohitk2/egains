@@ -29,10 +29,10 @@ graph TD
 
     subgraph "Preferences Collected"
         P1[1. product_category]
-        P2[2. budget → price]
-        P3[3. battery_life → battery_life]
-        P4[4. storage → max_storage]
-        P5[5. ram → ram]
+        P2[2. budget]
+        P3[3. battery_life ]
+        P4[4. storage]
+        P5[5. ram ]
         P1 --> P2 --> P3 --> P4 --> P5
     end
 
