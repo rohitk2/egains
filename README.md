@@ -51,15 +51,25 @@ graph TD
 
 ## Run Locally
 
-1. **Create a `.env` file** in the project root with your API key:
+1. **Clone the repo:**
+   ```bash
+   git clone https://github.com/rohitk2/product_recommendation_chatbot.git
+   cd product_recommendation_chatbot
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+3. **Create a `.env` file** in the project root with your API key:
    ```
    ANTHROPIC_API_KEY=your_key_here
    ```
 
-2. **Install dependencies and start the server:**
+4. **Start the server:**
    ```bash
-   pip install fastapi uvicorn anthropic langgraph pydantic pandas python-dotenv
    uvicorn server:app --reload
    ```
 
-3. **Open** [http://localhost:8000](http://localhost:8000) in your browser.
+5. **Open** [http://localhost:8000](http://localhost:8000) in your browser.
