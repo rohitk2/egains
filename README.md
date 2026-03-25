@@ -27,7 +27,7 @@ graph TD
     G -->|top 3 results| F
     F --> H((END))
 
-    subgraph Preferences Collected
+    subgraph "Preferences Collected"
         P1[1. product_category]
         P2[2. budget → price]
         P3[3. battery_life → battery_life]
@@ -36,7 +36,7 @@ graph TD
         P1 --> P2 --> P3 --> P4 --> P5
     end
 
-    D -.-|once all 5 collected| Preferences Collected
+    D -.-|"once all 5 collected"| P1
 ```
 
 ## Chatbot Flow
