@@ -26,7 +26,7 @@ graph TD
         P5[5. ram]
     end
 ```
-## Brief Explanation
+## File Overview
 
 | File | Description |
 |------|-------------|
@@ -34,6 +34,8 @@ graph TD
 | `chatbot.py` | LangGraph-based conversational agent that uses Claude to collect user preferences and query a product database for recommendations. |
 | `index.html` | Single-page chat UI that renders the conversation and displays recommended products as styled cards with Amazon search links. |
 | `products.csv` | Dataset of 30+ Apple products (laptops, phones, tablets, wearables, etc.) with specs like price, battery life, RAM, and storage. |
+
+## Brief Explanation
 
 1. **Session start** -- The user opens the page, triggering a `GET /start` call that creates a new session and invokes the LangGraph graph with an initial greeting.
 2. **Preference collection** -- The `orchestrator_agent` node sends the conversation to Claude with a system prompt instructing it to ask about preferences one at a time: product category, budget, battery life, storage, and RAM.
